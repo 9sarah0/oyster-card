@@ -8,12 +8,21 @@ class Journey
   end
 
   def start_journey(entry_station)
+    @complete = false
     @journey[:entry_station] = entry_station
   end
 
   def finish_journey(exit_station)
     @journey[:exit_station] = exit_station
     @complete = true
+  end
+
+  def reset_journey
+    @journey = {}
+  end
+
+  def empty_journey?
+    @journey.empty?
   end
 
   def fare
